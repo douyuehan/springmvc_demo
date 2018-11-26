@@ -25,4 +25,11 @@ public class LoginController {
         System.out.println(num);
         return "world";
     }
+    @RequestMapping("delete/{username}/{id}")
+    public String delete(@PathVariable String username,@PathVariable Integer id)
+    {
+        System.out.println(username);
+        System.out.println(id);
+        return "world";
+    }
 }
