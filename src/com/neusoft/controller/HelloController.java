@@ -13,13 +13,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HelloController {
 
     @RequestMapping("hello.do")
-    public void hello()
+    public String hello()
     {
         System.out.println("hello");
+        return "hello";
     }
     @RequestMapping("world.do")
-    public void world()
+    public String world()
     {
         System.out.println("world");
+        return "world";
     }
 }
