@@ -1,6 +1,7 @@
 package com.neusoft.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletResponse;
@@ -16,5 +17,12 @@ public class LoginController {
     public void login(HttpServletResponse response) throws IOException {
         response.setContentType("text/html;charset=utf-8");
         response.getWriter().println("张三");
+    }
+
+    @RequestMapping("count/{num}")
+    public String count(@PathVariable Integer num)
+    {
+        System.out.println(num);
+        return "world";
     }
 }

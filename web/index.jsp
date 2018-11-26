@@ -18,5 +18,8 @@
       身份证号：<input type="text" name="user_no">
       <input type="submit">
     </form>
+
+    <a href="${pageContext.request.contextPath}/count/3">计数</a>
+    <%--<a href="${pageContext.request.contextPath}/count/3">计数</a>--%>
   </body>
 </html>

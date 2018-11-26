@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-hello world.jsp ${username}
+hello world.jsp
 </body>
 </html>
