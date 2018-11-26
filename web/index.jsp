@@ -11,6 +11,12 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+    <form method="post" action="${pageContext.request.contextPath}/hello.do">
+      姓名：<input type="text" name="user_name">
+      籍贯：<input type="text" name="user_city">
+      年龄：<input type="text" name="user_age">
+      身份证号：<input type="text" name="user_no">
+      <input type="submit">
+    </form>
   </body>
 </html>
