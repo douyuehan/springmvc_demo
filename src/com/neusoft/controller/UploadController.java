@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
@@ -15,11 +16,36 @@ import java.io.IOException;
 @Controller
 public class UploadController {
     @RequestMapping("/upload")
-    public void upload(String username,@RequestParam MultipartFile upload_pic) throws IOException {
+    public ModelAndView upload(String username, @RequestParam MultipartFile upload_pic, HttpServletRequest request) throws IOException {
         System.out.println(username);
-        String fileName = upload_pic.getOriginalFilename();
-        System.out.println(fileName);
-        File savePath = new File("d:/" + fileName);
-        upload_pic.transferTo(savePath);
+        ModelAndView modelAndView = new ModelAndView();
+        if(upload_pic.getSize() > 0)
+        {
+            String fileName = upload_pic.getOriginalFilename();
+
+//        域对象 page request session application
+            //我站点（项目）所在的系统的路径
+            String realPath = request.getServletContext().getRealPath("/static/upload")+ File.separator;
+            File folder = new File(realPath);
+
+            if(!folder.exists())
+            {
+                folder.mkdirs();
+            }
+
+
+            System.out.println(realPath);
+
+            System.out.println(fileName);
+            File savePath = new File(realPath  + fileName);
+            upload_pic.transferTo(savePath);
+
+            modelAndView.addObject("picname",fileName);
+            modelAndView.setViewName("index");
+        }
+
+
+        return modelAndView;
+
     }
 }

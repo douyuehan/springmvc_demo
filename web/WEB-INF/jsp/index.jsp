@@ -31,6 +31,7 @@
     <input type="submit">
 </form>
 
+<img src="${pageContext.request.contextPath}/static/upload/${picname}">
 
 </body>
 </html>
