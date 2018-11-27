@@ -44,10 +44,10 @@ public class HelloController {
 //        return "redirect:/world2.do";
     }
 
-    @RequestMapping("/world2.do")
-    public String world2()
-    {
-        return "world";
+    @RequestMapping("/world")
+    public void world2(HttpServletResponse response) throws IOException {
+        response.setContentType("text/html;charset=utf-8");
+        response.getWriter().println("张三");
     }
 
 

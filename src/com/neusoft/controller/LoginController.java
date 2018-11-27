@@ -10,7 +10,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -23,11 +25,22 @@ public class LoginController {
     SqlSession sqlSession = null;
     DeptMapper deptMapper = null;
 
+    @RequestMapping("gologin")
+    public String gologin()
+    {
+        return "login";
+    }
 //json字符串
-    @RequestMapping("/login.do")
-    public void login(HttpServletResponse response) throws IOException {
-        response.setContentType("text/html;charset=utf-8");
-        response.getWriter().println("张三");
+    @RequestMapping("/login")
+    public String login(String username, String passwd, HttpServletRequest request) throws IOException {
+
+        if(username.equals("admin") && passwd.equals("123456"))
+        {
+            HttpSession httpSession = request.getSession();
+            httpSession.setAttribute("userinfo",username);
+            return "index";
+        }
+        return "login";
     }
 
     @RequestMapping("count/{num}")

@@ -28,7 +28,22 @@
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/admin/**"/>
+            <bean class="com.neusoft.interceptor.AInterceptor"></bean>
+        </mvc:interceptor>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/admin/**"/>
+            <!--<mvc:exclude-mapping path="/admin/count/**"></mvc:exclude-mapping>-->
+            <!--<mvc:exclude-mapping path="/admin/delete/**"></mvc:exclude-mapping>-->
             <bean class="com.neusoft.interceptor.FirstInterceptor"></bean>
+        </mvc:interceptor>
+
+
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/admin/gologin"></mvc:exclude-mapping>
+            <mvc:exclude-mapping path="/admin/login"></mvc:exclude-mapping>
+            <bean class="com.neusoft.interceptor.LoginInterceptor"></bean>
         </mvc:interceptor>
     </mvc:interceptors>
 </beans>

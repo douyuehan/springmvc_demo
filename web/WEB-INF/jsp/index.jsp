@@ -31,6 +31,9 @@
     <input type="submit">
 </form>
 
+<p>欢迎您 ${userinfo}</p>
+
+<a href="${pageContext.request.contextPath}/admin/gologin">登录</a>
 <img src="${pageContext.request.contextPath}/static/upload/${picname}">
 
 </body>
