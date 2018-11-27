@@ -1,9 +1,27 @@
 package com.neusoft.dto;
 
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
+
 /**
  * Created by Administrator on 2018/11/26.
  */
 public class User {
+    public static void main(String[] args) {
+
+//        Set<String> set = new HashSet<>();
+//        for(int j = 0; j < 10; j++)
+//        {
+//            for(int i = 0; i < 100000000; i++)
+//            {
+//                UUID uuid = UUID.randomUUID();
+//                set.add(uuid.toString());
+//            }
+//        }
+
+//        System.out.println(set.size());
+    }
     private String user_name;
     private String user_city;
     private Integer user_age;

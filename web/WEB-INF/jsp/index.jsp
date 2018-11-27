@@ -21,8 +21,8 @@
     <%--<input type="submit">--%>
 <%--</form>--%>
 <p id="content">ppppppppppppp999999999pppppppppppppp</p>
-<a href="${pageContext.request.contextPath}/count/3">计数</a>
-<a href="${pageContext.request.contextPath}/delete/zhangsan/3">删除</a>
+<a href="${pageContext.request.contextPath}/admin/count/3">计数</a>
+<a href="${pageContext.request.contextPath}/admin/delete/zhangsan/3">删除</a>
 <%--<a href="${pageContext.request.contextPath}/count/3">计数</a>--%>
 <%--<img src="${pageContext.request.contextPath}/static/img/timg.jpg">--%>
 <form method="post" action="${pageContext.request.contextPath}/upload" enctype="multipart/form-data">

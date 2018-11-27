@@ -9,6 +9,8 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
+import java.util.UUID;
 
 /**
  * Created by Administrator on 2018/11/27.
@@ -37,7 +39,10 @@ public class UploadController {
             System.out.println(realPath);
 
             System.out.println(fileName);
-            File savePath = new File(realPath  + fileName);
+//            Date date = new Date();
+//            long time = date.getTime();//此刻的时间距离19700101经过的毫秒数
+            UUID uuid = UUID.randomUUID();
+            File savePath = new File(realPath  + uuid + fileName);
             upload_pic.transferTo(savePath);
 
             modelAndView.addObject("picname",fileName);

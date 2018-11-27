@@ -18,6 +18,7 @@ import java.io.InputStream;
  * Created by Administrator on 2018/11/26.
  */
 @Controller
+@RequestMapping("admin")
 public class LoginController {
     SqlSession sqlSession = null;
     DeptMapper deptMapper = null;
